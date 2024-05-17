@@ -65,7 +65,8 @@ namespace TechJobsConsoleAutograded6
                     // Fetch results
                     if (columnChoice.Equals("all"))
                     {
-                        Console.WriteLine("Search all fields not yet implemented.");
+                        List<Dictionary<string, string>> searchResults = JobData.FindByValue(searchTerm);
+                        PrintJobs(searchResults);
                     }
                     else
                     {
@@ -147,16 +148,15 @@ namespace TechJobsConsoleAutograded6
                 return;
             }
 
-            //This loops through the jobs
+            //This loops through the jobs and prints rows and columns results
             foreach(Dictionary<string, string> job in someJobs)
             {
                 Console.WriteLine(stars);
-
-                    //This prints the key value pairs row and column 
-                    foreach(KeyValuePair<string, string> kvp in job)
-                    {
-                        Console.WriteLine(kvp.Key + ": " + kvp.Value + nl);
-                    }
+                Console.WriteLine("position type: " + job["position type"]);
+                Console.WriteLine("name: " + job["name"]);
+                Console.WriteLine("employer: " + job["employer"]);
+                Console.WriteLine("location: " + job["location"]);
+                Console.WriteLine("core competency: " + job["core competency"]);
                 Console.WriteLine(stars + nl);
             }
 

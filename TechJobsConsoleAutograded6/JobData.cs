@@ -47,7 +47,30 @@ namespace TechJobsConsoleAutograded6
             // load data, if not already loaded
             LoadData();
 
-            return null;
+            //This is where the matching jobs will go for a search result
+            List<Dictionary<string, string>> findMatchingJobResults = new();
+
+            //This loops through data base 
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+                //This loops through each job listing to find matched term
+                foreach(string val in job.Values)
+                {
+                    //finds a value, if it is found then it will have an index
+                    if(val.IndexOf(value) >= 0)
+                    {
+                        //Add matched term to List but don't duplicate
+                        if(!findMatchingJobResults.Contains(job))
+                        {
+                            findMatchingJobResults.Add(job);
+                            
+                        }
+                    }
+                }
+                
+            }
+
+            return findMatchingJobResults;      
         }
 
         /**
