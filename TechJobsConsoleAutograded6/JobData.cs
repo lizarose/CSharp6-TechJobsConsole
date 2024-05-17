@@ -57,7 +57,8 @@ namespace TechJobsConsoleAutograded6
                 foreach(string val in job.Values)
                 {
                     //finds a value, if it is found then it will have an index
-                    if(val.IndexOf(value) >= 0)
+                    //this is also case-insensitive
+                    if(val.ToLower().IndexOf(value.ToLower()) >= 0)
                     {
                         //Add matched term to List but don't duplicate
                         if(!findMatchingJobResults.Contains(job))
