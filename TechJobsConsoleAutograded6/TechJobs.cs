@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TechJobsConsoleAutograded6
 {
@@ -135,7 +136,30 @@ namespace TechJobsConsoleAutograded6
         // TODO: complete the PrintJobs method.
         public void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            Console.WriteLine("PrintJobs is not implemented yet");
+            // Console.WriteLine("PrintJobs is not implemented yet");
+            string nl = Environment.NewLine;
+            string stars = "*****";
+
+            //This prints 'No Results'
+            if (someJobs.Count == 0)
+            {
+                Console.WriteLine("No Results");
+                return;
+            }
+
+            //This loops through the jobs
+            foreach(Dictionary<string, string> job in someJobs)
+            {
+                Console.WriteLine(stars);
+
+                    //This prints the key value pairs row and column 
+                    foreach(KeyValuePair<string, string> kvp in job)
+                    {
+                        Console.WriteLine(kvp.Key + ": " + kvp.Value + nl);
+                    }
+                Console.WriteLine(stars + nl);
+            }
+
         }
     }
 }
