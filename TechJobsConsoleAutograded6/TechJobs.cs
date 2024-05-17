@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.Security.Cryptography.X509Certificates;
 
 namespace TechJobsConsoleAutograded6
@@ -47,6 +48,7 @@ namespace TechJobsConsoleAutograded6
                         List<string> results = JobData.FindAll(columnChoice);
 
                         Console.WriteLine(Environment.NewLine + "*** All " + columnChoices[columnChoice] + " Values ***");
+                        results.Sort();
                         foreach (string item in results)
                         {
                             Console.WriteLine(item);
