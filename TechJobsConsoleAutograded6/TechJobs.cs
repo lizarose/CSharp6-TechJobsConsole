@@ -146,20 +146,20 @@ namespace TechJobsConsoleAutograded6
             //This prints 'No Results'
             if (someJobs.Count == 0)
             {
-                Console.WriteLine("No Results");
+                Console.WriteLine("No results");
                 return;
             }
 
             //This loops through the jobs and prints rows and columns results
             foreach(Dictionary<string, string> job in someJobs)
             {
-                Console.WriteLine(stars);
-                Console.WriteLine("position type: " + job["position type"]);
+                Console.WriteLine(nl + stars);
                 Console.WriteLine("name: " + job["name"]);
                 Console.WriteLine("employer: " + job["employer"]);
                 Console.WriteLine("location: " + job["location"]);
+                Console.WriteLine("position type: " + job["position type"]);
                 Console.WriteLine("core competency: " + job["core competency"]);
-                Console.WriteLine(stars + nl);
+                Console.WriteLine(stars);
             }
 
         }

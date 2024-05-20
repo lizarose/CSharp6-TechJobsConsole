@@ -26,9 +26,7 @@
     <None Remove="TestPrintJobsNoResults.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="**/*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    
     <Content Include="TestCaseInsensitiveSearch.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -41,5 +39,9 @@
     <Content Include="TestPrintJobsNoResults.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+<Content Include="job_data.csv">
+<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+</Content>
+
   </ItemGroup>
 </Project>
